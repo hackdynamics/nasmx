@@ -7,7 +7,7 @@
 
 FIONBIO equ 0x5421
 
-ENTRY main
+entry begin
 
 struc sockaddr_in
     .sin_family resw 1
@@ -65,7 +65,14 @@ reply_buff_size equ  $ - reply_buff
 
 [SECTION .text]
 
-proc main
+begin:
+
+	push rbp
+	mov rbp, rsp
+
+	call main_proc
+
+proc main_proc
 locals none
 
 	syscall socket, 2, 1, 0

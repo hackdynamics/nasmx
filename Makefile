@@ -2,8 +2,8 @@
 NAME=tty
 AS=nasm
 ASFLAGS=-f elf64
-LD=gcc -no-pie
-LDFLAGS		=-Wall -s
+LD=ld
+LDFLAGS		=
 LIBS		=-lc
 
 # [ Suffixes ]
